@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Evaluator Dashboard — Logic Challenge</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="evaluator">
+
+<div class="eval-shell">
+  <div class="eval-header">
+    <h1>Evaluator Dashboard</h1>
+    <a class="back" href="index.html">&larr; Back to participant view</a>
+  </div>
+
+  <div class="drop-zone" id="dropZone">
+    <strong>Drop submission files here</strong> or click to choose &mdash; you can select several <code>LogicChallenge_*.json</code> files at once.
+    <input type="file" id="fileInput" accept=".json" multiple>
+  </div>
+
+  <div class="eval-layout">
+    <div class="roster" id="roster">
+      <div class="roster-empty">No submissions loaded yet.</div>
+    </div>
+
+    <div class="detail-panel" id="detailPanel">
+      <div class="detail-empty">Load one or more submission files, then select a participant on the left to review and score their answers.</div>
+    </div>
+  </div>
+</div>
+
+<script src="js/questions.js"></script>
+<script src="js/evaluator.js"></script>
+</body>
+</html>

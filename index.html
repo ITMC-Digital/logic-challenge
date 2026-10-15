@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Logical Thinking & System Design Challenge</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================ EXAM BAR (hidden until started) ============================ -->
+<div class="exam-bar" id="examBar" style="display:none;">
+  <div class="exam-bar-inner">
+    <div class="who">Participant: <strong id="barName">—</strong></div>
+    <div class="clock" id="clock">60:00</div>
+  </div>
+</div>
+
+<div class="sheet">
+
+  <!-- ============================ SCREEN 1: START ============================ -->
+  <section id="screen-start">
+    <div class="paper-card">
+      <div class="masthead">
+        <div class="eyebrow">Internal Assessment</div>
+        <h1>Real-World Logical Thinking<span class="line2">&amp; System Design Challenge</span></h1>
+        <div class="tagline" id="taglineText"></div>
+      </div>
+
+      <hr class="rule">
+
+      <div class="section-label">Assessment objective</div>
+      <div class="objective"><p id="objectiveText"></p></div>
+
+      <div class="section-label">Instructions</div>
+      <ul class="instructions" id="instructionsList"></ul>
+
+      <div class="section-label">Schedule</div>
+      <div class="schedule" id="scheduleStrip"></div>
+
+      <hr class="rule">
+
+      <div class="section-label">Before you begin</div>
+      <div class="field-grid">
+        <div class="field">
+          <label for="inpName">Your name</label>
+          <select id="inpName">
+            <option value="">— Select your name —</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="inpEmail">Your email</label>
+          <input id="inpEmail" type="text" value="" readonly tabindex="-1" style="background:#eee6d2; color:#8a8370;">
+        </div>
+      </div>
+      <div class="field-grid">
+        <div class="field">
+          <label for="inpTeam">Team / Department</label>
+          <input id="inpTeam" type="text" placeholder="e.g. Backend Engineering" autocomplete="off">
+        </div>
+        <div></div>
+      </div>
+      <p id="startError" style="color:#a13b2e; font-size:13px; display:none; margin-top:-16px; margin-bottom:20px;"></p>
+
+      <div class="btn-row" style="justify-content:flex-end;">
+        <button class="btn btn--brass" id="btnStart">Begin Assessment &rarr;</button>
+      </div>
+    </div>
+    <div class="footnote">Once started, the 60-minute clock runs continuously. Your answers are saved in this browser as you type.</div>
+  </section>
+
+  <!-- ============================ SCREEN 2: EXAM ============================ -->
+  <section id="screen-exam" style="display:none;">
+    <div class="progress-rail" id="progressRail"></div>
+
+    <div class="paper-card">
+      <div class="problem-head">
+        <div class="problem-no" id="probNo"></div>
+        <h2 id="probTitle"></h2>
+        <div class="focus-tags" id="probFocus"></div>
+      </div>
+
+      <div class="statement" id="probStatement"></div>
+
+      <div class="section-label">Questions</div>
+      <div id="questionsContainer"></div>
+
+      <div class="bonus-block">
+        <div class="bonus-ribbon">Bonus &middot; optional</div>
+        <div id="bonusText" style="font-size:14.5px;"></div>
+        <textarea id="bonusAnswer" placeholder="Optional — answer if time permits..."></textarea>
+      </div>
+
+      <div class="autosave-note" id="autosaveNote">&nbsp;</div>
+
+      <div class="btn-row">
+        <button class="btn btn--ghost" id="btnPrev">&larr; Previous</button>
+        <button class="btn btn--brass" id="btnNext">Next &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SCREEN 3: DONE ============================ -->
+  <section id="screen-done" style="display:none;">
+    <div class="paper-card done-screen">
+      <div class="stamp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <h2>Submitted</h2>
+      <p>Your answers have been recorded. A backup copy has also been compiled into a results file below — keep it in case it's needed.</p>
+      <div class="filename-chip" id="filenameChip"></div>
+      <div>
+        <button class="btn btn--brass" id="btnDownload">Download my submission &darr;</button>
+      </div>
+    </div>
+    <div class="footnote">Thank you for taking part. Discuss your reasoning with the group when the session wraps up.</div>
+  </section>
+
+</div>
+
+<div id="devtoolsWarning" style="display:none; position:fixed; inset:0; background:rgba(28,24,18,0.96); color:#f5efe0; z-index:9999; align-items:center; justify-content:center; text-align:center; padding:40px; font-family:'Segoe UI', sans-serif; font-size:18px;">
+  <div>Please close developer tools to continue the assessment.<br><span style="font-size:14px; opacity:0.8;">Your progress is saved — it will reappear once this is closed.</span></div>
+</div>
+
+<script src="js/questions.js"></script>
+<script src="js/employees.js"></script>
+<script src="js/config.js"></script>
+<script src="js/lockdown.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
